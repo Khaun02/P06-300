@@ -8,11 +8,13 @@ public class BSTNode<T> {
     private T data;
     private BSTNode<T> left;
     private BSTNode<T> right;
+    private BSTNode<T> parent;
     // The constructor
     public BSTNode(T data) {
         this.data = data;
         this.left = null;
         this.right = null;
+        this.parent = null;
     }
 
     public T getData() {
