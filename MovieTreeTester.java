@@ -1,4 +1,8 @@
-
+/** Generic class for a node
+ * 
+ * @author Shaun Khang
+ * 
+ */
 public class MovieTreeTester {
     public static boolean testAddMovie() {
         return false;

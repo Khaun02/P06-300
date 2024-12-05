@@ -1,3 +1,8 @@
+/** Generic class for a node
+ * 
+ * @author Shaun Khang
+ * 
+ */
 import java.lang.Comparable;
 
 public class Movie implements Comparable<Movie> {

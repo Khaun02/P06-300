@@ -1,7 +1,12 @@
-public class BSTNode<T> {
+/** Generic class for a node
+ * 
+ * @author Shaun Khang
+ * 
+ * @param <T> any data type that you want the node to hold
+ */
 
     public BSTNode(T data) {
-
+        
     }
 
     public T getData() {
@@ -23,7 +28,7 @@ public class BSTNode<T> {
     public BSTNode<T> getRight() {
 
     }
-    
+
     public void setRight(BSTNode<T> right) {
 
     }

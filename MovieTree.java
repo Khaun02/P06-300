@@ -1,4 +1,8 @@
-
+/** Generic class for a node
+ * 
+ * @author Shaun Khang
+ *
+ */
 public class MovieTree {
     
     public boolean addMovie(Movie movie) {
