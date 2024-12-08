@@ -53,7 +53,8 @@ public class MovieTreeTester {
             System.out.println(String.valueOf(movieTree1.size()));
             return false;
         }
-        
+        // test3: testing with more than 2
+        // test4: testing with exceptions
         return true;
     }
     public static boolean testHeight() {

@@ -104,19 +104,11 @@ public class MovieTree {
 
     }
 
-    public boolean contains(Movie movie) {
-
-    }
-
-    public Movie getBestMovie() {
-
-    }
-
-    public List<Movie> lookup(int year, double minimumRating) {
-
-    }
-
     private int heightHelper(BSTNode<Movie> current) {
+
+    }
+
+    public boolean contains(Movie movie) {
 
     }
 
@@ -124,7 +116,15 @@ public class MovieTree {
 
     }
 
+    public Movie getBestMovie() {
+
+    }
+
     private Movie getBestMovieHelper(BSTNode<Movie> current) {
+
+    }
+
+    public List<Movie> lookup(int year, double minimumRating) {
 
     }
 
@@ -135,5 +135,22 @@ public class MovieTree {
     @Override
     public String toString() {
 
+        if (root == null) {
+            return "The tree is empty";
+        }
+
+        return toStringHelper();
+
+    }
+
+    private String toStringHelper(BSTNode<Movie> current) {
+
+        if (current == null) {
+            return "";
+        }
+        
+        String leftString = toStringHelper(current.getLeft());
+        String rightString = toStringHelper(current.getRight());
+        return leftString + rightString;
     }
 }
