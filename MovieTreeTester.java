@@ -10,6 +10,9 @@ public class MovieTreeTester {
         Movie movie1 = new Movie(1994, 9.3, "The Shawshank Redemption");
         Movie movie2 = new Movie(2008, 9.0, "The Dark Knight");
         Movie movie3 = new Movie(2010, 8.8, "Inception");
+        Movie movie4 = new Movie(1993, 8.8, "Bobby Wasabi");
+        Movie movie5 = new Movie(1992, 8.8, "Kickin IT");
+        Movie movie6 = new Movie(1995, 8.8, "Nemo");
    
         if (movieTree.addMovie(movie1) == false) {
             System.out.println("Test 1 of testAddMovie failed");
@@ -34,6 +37,20 @@ public class MovieTreeTester {
         // should just go through this method since i havent added anything to the movieTree
         if (movieTree.size() != 0) {
             System.out.println("Test 1 for testSize failed.");
+            return false;
+        }
+
+        MovieTree movieTree1 = new MovieTree();
+        Movie movie1 = new Movie(1994, 9.3, "The Shawshank Redemption");
+        Movie movie2 = new Movie(2008, 9.0, "The Dark Knight");
+        movieTree1.addMovie(movie1); 
+        movieTree1.addMovie(movie2); 
+        
+
+        // test2: the size should be 2
+        if (movieTree1.size() != 2) {
+            System.out.println("Test 2 for testSize failed.");
+            System.out.println(String.valueOf(movieTree1.size()));
             return false;
         }
         

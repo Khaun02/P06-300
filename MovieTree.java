@@ -32,7 +32,7 @@ public class MovieTree {
      */
     private boolean addMovieHelper(BSTNode<Movie> current, Movie movie) {
         
-        // goes left
+        // goes left based on the year, rating, name.  uses the logic of the movie file's compareTo method
         if (movie.compareTo(current.getData()) < 0) {
             if (current.getLeft() == null) {
                 //set the current node we're on child to be right
@@ -44,7 +44,7 @@ public class MovieTree {
                 return addMovieHelper(current.getLeft(), movie);
             }
         }
-        // goes right
+        // goes right based on the year, rating, name.  uses the logic of the movie file's compareTo method
         else if (movie.compareTo(current.getData()) > 0) {
             if (current.getRight() == null) {
                 //set the current node we're on child to be right
@@ -95,13 +95,9 @@ public class MovieTree {
         if (current == null) {
             return 0;
         }
-        // To calculate the size of the tree, you need to traverse both the left and right subtrees of the current node.
-        if (current.getLeft() == null) {
-            return 0;
-            sizeHelper(current.getLeft());
-            current.
-        }
-        return 0;
+        int leftTree = sizeHelper(current.getLeft());
+        int rightTree = sizeHelper(current.getRight());
+        return leftTree + rightTree + 1;
     }
 
     public int height() {
@@ -119,8 +115,6 @@ public class MovieTree {
     public List<Movie> lookup(int year, double minimumRating) {
 
     }
-
-
 
     private int heightHelper(BSTNode<Movie> current) {
 
