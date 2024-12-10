@@ -157,18 +157,21 @@ public class MovieTree {
             return "The tree is empty";
         }
 
-        return toStringHelper();
+        return toStringHelper(root);
 
     }
 
     private String toStringHelper(BSTNode<Movie> current) {
 
+        // base case, if it ever gets to a node that is null, that means its at the end of the subtree/tree
         if (current == null) {
             return "";
         }
         
+        // recursive case
         String leftString = toStringHelper(current.getLeft());
         String rightString = toStringHelper(current.getRight());
-        return leftString + rightString;
+
+        return (leftString + " " + current.getData().toString() + " " + rightString).trim();
     }
 }

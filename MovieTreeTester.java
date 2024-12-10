@@ -88,11 +88,51 @@ public class MovieTreeTester {
     public static boolean testLookup() {
         return false;
     }
+    public static boolean testToString() {
+        {
+            //test case 1
+            MovieTree moviecat = new MovieTree();
+            Movie movie1 = new Movie(2002, 9.5, "Nemo");
+            Movie movie2 = new Movie(2023, 6.4, "Shark attack");
+            Movie movie3 = new Movie(2054, 2.3, "Fire boy lava girl");
+
+            moviecat.addMovie(movie1);
+            //  [Year: (2002) Rate: (9.5) Name: (Nemo)]
+            if (!"[Year: (2002) Rate: (9.5) Name: (Nemo)]".equals(moviecat.toString())) {
+                System.out.println("test1 of testToString failed");
+                System.out.println(moviecat.toString());
+                return false;
+            }
+        }
+        
+        {
+            //test case 2
+            MovieTree moviecat = new MovieTree();
+            Movie movie2 = new Movie(2002, 9.5, "Nemo");
+            Movie movie1 = new Movie(2023, 6.4, "Shark attack");
+            Movie movie3 = new Movie(2054, 2.3, "Fire boy lava girl");
+
+            moviecat.addMovie(movie2);
+            moviecat.addMovie(movie1);
+            moviecat.addMovie(movie3);
+            System.out.println(moviecat.toString());
+            //  [Year: (2002) Rate: (9.5) Name: (Nemo)]
+            if (!moviecat.toString().equalsIgnoreCase("[Year: (2002) Rate: (9.5) Name: (Nemo)] [Year: (2023) Rate: (6.4) Name: (Shark attack)]")) {
+                System.out.println(moviecat.toString());
+                System.out.println("test2 of testToString failed");
+                return false;
+            }
+        }
+        
+
+        return true;
+    }
     public static void main(String[] args) {
         System.out.println("testAddMovie: " + testAddMovie());
         System.out.println("testSize: " + testSize());
         System.out.println("testHeight: " + testHeight());
         System.out.println("testContains: " + testContains());
         System.out.println("testLookup: " + testLookup());
+        System.out.println("testToString: " + testToString());
     }
 }
