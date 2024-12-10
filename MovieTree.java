@@ -109,11 +109,29 @@ public class MovieTree {
     }
 
     public boolean contains(Movie movie) {
+        if (root == null) {
+            return false;
+        }
 
+        return containsHelper(root, movie);
     }
 
     private boolean containsHelper(BSTNode<Movie> current, Movie movie) {
+        // base case, if the program ever goes through and gets to a node that is null, then it means it didnt find anything
+        if (current == null) {
+            return false;
+        }
 
+        // recursive call
+        if (current.getData().compareTo(movie) == 0) {
+            return true;
+        }
+        if (current.getData().compareTo(movie) > 0) {
+            return containsHelper(current.getLeft(), movie);
+        }
+        else {
+            return containsHelper(current.getRight(), movie);
+        }
     }
 
     public Movie getBestMovie() {

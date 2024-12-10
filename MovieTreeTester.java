@@ -61,7 +61,29 @@ public class MovieTreeTester {
         return false;
     }
     public static boolean testContains() {
-        return false;
+        MovieTree movieCat = new MovieTree();
+        Movie movie1 = new Movie(2002, 9.2, "Nemo");
+        Movie movie2 = new Movie(2004, 7.6, "Nemo 2");
+        Movie movie3 = new Movie(2012, 5.5, "Your Name");
+
+        movieCat.addMovie(movie1);
+        movieCat.addMovie(movie2);
+
+
+        if (movieCat.contains(movie2) != true) {
+            System.out.println(movieCat.size());
+            return false;
+        }
+        if (movieCat.contains(movie1) != true) {
+            System.out.println("test2 of testContains failed");
+            return false;
+        }
+        if (movieCat.contains(movie3) == true) {
+            System.out.println("test3 of testContains failed");
+            return false;
+        }
+ 
+        return true;
     }
     public static boolean testLookup() {
         return false;
